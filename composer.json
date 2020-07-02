@@ -1,0 +1,53 @@
+{
+  "name": "boxybird/laravel-directus-config",
+  "description": "A package to help use Laravel as Directus CMS frontend.",
+  "keywords": [
+    "Laravel",
+    "Directus",
+    "headless cms"
+  ],
+  "homepage": "https://github.com/boxybird/directus-config",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Andrew Rhyand",
+      "email": "hello@andrewrhyand.com"
+    }
+  ],
+  "require": {
+    "laravel/framework": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "BoxyBird\\DirectusConfig\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BoxyBird\\DirectusConfig\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "BoxyBird\\DirectusConfig\\Providers\\ArtisanServiceProvider",
+        "BoxyBird\\DirectusConfig\\Providers\\MigrationServiceProvider",
+        "BoxyBird\\DirectusConfig\\Providers\\DirectusConfigServiceProvider"
+      ],
+      "aliases": {
+        "DirectusConfig": "BoxyBird\\DirectusConfig\\Facades\\DirectusConfigFacade"
+      }
+    }
+  }
+}
