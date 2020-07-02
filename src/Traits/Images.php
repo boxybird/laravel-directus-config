@@ -11,8 +11,8 @@ trait Images
     */
     public function getImageUrl(string $filename_disk): string
     {
-        $base_url     = config('directus_config.api.base_url');
-        $project_name = config('directus_config.api.project_name');
+        $base_url     = config('directus_config.base_url');
+        $project_name = config('directus_config.project_name');
 
         return "{$base_url}/uploads/{$project_name}/originals/{$filename_disk}";
     }
@@ -24,8 +24,8 @@ trait Images
     */
     public function getImageThumbnail(string $private_hash, string $key): string
     {
-        $base_url     = config('directus_config.api.base_url');
-        $project_name = config('directus_config.api.project_name');
+        $base_url     = config('directus_config.base_url');
+        $project_name = config('directus_config.project_name');
 
         return "{$base_url}/{$project_name}/assets/{$private_hash}?key={$key}";
     }

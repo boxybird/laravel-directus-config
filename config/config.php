@@ -4,8 +4,6 @@
  * You can place your custom package configuration in here.
  */
 return [
-    'login' => [
-       'email'    => env('DIRECTUS_EMAIL'),
-       'password' => env('DIRECTUS_PASSWORD'),
-    ]
+    'base_url'     => env('DIRECTUS_BASE_URL'),
+    'project_name' => env('DIRECTUS_PROJECT_NAME'),
 ];
